@@ -77,11 +77,14 @@ def valor_de_carta(carta):
         carta = chr(0x1f0ae)
     return carta
 
-def mano():
+def carta_inicial():
     mano = []
     for i in range(2):
         random.shuffle(baraja)
         carta = baraja.pop()
         valor_de_carta(carta)
         mano.append(carta)
+        print(mano)
     return mano
+
+carta_inicial()
