@@ -48,3 +48,13 @@ print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0],
                                                           main_banca[1],
                                                           score_banca))
 
+def valor_de_carta(carta):
+    if carta == 2
+
+def mano():
+    mano = []
+    for i in range(2):
+        random.shuffle(baraja)
+        carta = baraja.pop()
+        mano.append(carta)
+    return mano
