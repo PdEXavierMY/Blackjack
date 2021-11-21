@@ -48,7 +48,6 @@ def simbolo_carta(carta):
     return carta
 
 def puntuacion(carta, total):
-    total = 0
     if carta == 1:
         total += 11
     elif carta == 2:
@@ -79,14 +78,14 @@ def puntuacion(carta, total):
 
 def carta_inicial():
     mano = []
+    total = 0
     for i in range(2):
         random.shuffle(baraja)
         carta = baraja.pop()
-        total = puntuacion(carta, total)
+        puntos = puntuacion(carta, 0)
+        total += puntos
         carta = simbolo_carta(carta)
         mano.append(carta)
         print(mano)
         print(total)
     return mano
-
-carta_inicial()
