@@ -61,16 +61,30 @@ def carta_inicial():
 def puntuacion(mano):
     total = 0
     for carta in mano:
-        if carta == :
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
-        elif carta ==:
+        if carta == 1:
+            total += 11
+        elif carta == 2:
+            total += 2
+        elif carta == 3:
+            total += 3
+        elif carta == 4:
+            total += 4
+        elif carta == 5:
+            total += 5
+        elif carta == 6:
+            total += 6
+        elif carta == 7:
+            total += 7
+        elif carta == 8:
+            total += 8
+        elif carta == 9:
+            total += 9
+        elif carta == 10:
+            total += 10
+        elif carta == 11:
+            total += 10
+        elif carta == 12:
+            total += 10
+        elif carta == 13:
+            total += 10
+        return total
