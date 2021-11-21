@@ -88,6 +88,7 @@ def valor_de_carta(carta):
     if carta == 13:
         carta = chr(0x1f0ae)
         valorcarta = 10
+    return carta, valorcarta
 
 def mano():
     mano = []
