@@ -51,44 +51,31 @@ print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0],
 def valor_de_carta(carta):
     if carta == 1:
         carta = chr(0x1f0a1)
-        valorcarta = 11
     if carta == 2:
         carta = chr(0x1f0a2)
-        valorcarta = 2
     if carta == 3:
         carta = chr(0x1f0a3)
-        valorcarta = 3
     if carta == 4:
         carta = chr(0x1f0a4)
-        valorcarta = 4
     if carta == 5:
         carta = chr(0x1f0a5)
-        valorcarta = 5
     if carta == 6:
         carta = chr(0x1f0a6)
-        valorcarta = 6
     if carta == 7:
         carta = chr(0x1f0a7)
-        valorcarta = 7
     if carta == 8:
         carta = chr(0x1f0a8)
-        valorcarta = 8
     if carta == 9:
         carta = chr(0x1f0a9)
-        valorcarta = 9
     if carta == 10:
         carta = chr(0x1f0aa)
-        valorcarta = 10
     if carta == 11:
         carta = chr(0x1f0ab)
-        valorcarta = 10
     if carta == 12:
         carta = chr(0x1f0ad)
-        valorcarta = 10
     if carta == 13:
         carta = chr(0x1f0ae)
-        valorcarta = 10
-    return carta, valorcarta
+    return carta
 
 def mano():
     mano = []
