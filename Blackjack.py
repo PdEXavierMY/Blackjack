@@ -19,61 +19,32 @@ cartas = {
 
 baraja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] * 4
 
-print("Cartas: {}".format(" ".join(cartas.keys())))
-print("Puntos: {}".format(list(cartas.values())))
-
-print("1\ Iteración estándar sobre un diccionario")
-for carta, valor in cartas.items():
-    print("la carta {} vale {}".format(carta, valor))
-
-print("2\ Iteración ordenada sobre un diccionario")
-for carta in sorted(cartas.keys()):
-    print("la carta {} vale {}".format(carta, cartas[carta]))
-
-print("3\ Black Jack")
-lista_cartas = list(cartas)
-
-print("Ha seleccionado:", end=" ")
-carta = choice(lista_cartas)
-score = cartas[carta]
-print(carta, end=" ")
-carta = choice(lista_cartas)
-score += cartas[carta]
-print(carta, end=" ")
-print(" >>> su puntuación es de", score)
-
-main_banca = sample(lista_cartas, 2)
-score_banca = sum(cartas[carta] for carta in main_banca)
-print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0],
-                                                          main_banca[1],
-                                                          score_banca))
-
 def valor_de_carta(carta):
     if carta == 1:
         carta = chr(0x1f0a1)
-    if carta == 2:
+    elif carta == 2:
         carta = chr(0x1f0a2)
-    if carta == 3:
+    elif carta == 3:
         carta = chr(0x1f0a3)
-    if carta == 4:
+    elif carta == 4:
         carta = chr(0x1f0a4)
-    if carta == 5:
+    elif carta == 5:
         carta = chr(0x1f0a5)
-    if carta == 6:
+    elif carta == 6:
         carta = chr(0x1f0a6)
-    if carta == 7:
+    elif carta == 7:
         carta = chr(0x1f0a7)
-    if carta == 8:
+    elif carta == 8:
         carta = chr(0x1f0a8)
-    if carta == 9:
+    elif carta == 9:
         carta = chr(0x1f0a9)
-    if carta == 10:
+    elif carta == 10:
         carta = chr(0x1f0aa)
-    if carta == 11:
+    elif carta == 11:
         carta = chr(0x1f0ab)
-    if carta == 12:
+    elif carta == 12:
         carta = chr(0x1f0ad)
-    if carta == 13:
+    elif carta == 13:
         carta = chr(0x1f0ae)
     return carta
 
@@ -87,4 +58,19 @@ def carta_inicial():
         print(mano)
     return mano
 
-carta_inicial()
+def puntuacion(mano):
+    total = 0
+    for carta in mano:
+        if carta == :
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
+        elif carta ==:
