@@ -20,33 +20,47 @@ cartas = {
 baraja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] * 4
 
 def valor_de_carta(carta):
+    total = 0
     if carta == 1:
         carta = chr(0x1f0a1)
+        total += 11
     elif carta == 2:
         carta = chr(0x1f0a2)
+        total += 2
     elif carta == 3:
         carta = chr(0x1f0a3)
+        total += 3
     elif carta == 4:
         carta = chr(0x1f0a4)
+        total += 4
     elif carta == 5:
         carta = chr(0x1f0a5)
+        total += 5
     elif carta == 6:
         carta = chr(0x1f0a6)
+        total += 6
     elif carta == 7:
         carta = chr(0x1f0a7)
+        total += 7
     elif carta == 8:
         carta = chr(0x1f0a8)
+        total += 8
     elif carta == 9:
         carta = chr(0x1f0a9)
+        total += 9
     elif carta == 10:
         carta = chr(0x1f0aa)
+        total += 10
     elif carta == 11:
         carta = chr(0x1f0ab)
+        total += 10
     elif carta == 12:
         carta = chr(0x1f0ad)
+        total += 10
     elif carta == 13:
         carta = chr(0x1f0ae)
-    return carta
+        total += 10
+    return carta, total
 
 def carta_inicial():
     mano = []
@@ -57,34 +71,3 @@ def carta_inicial():
         mano.append(carta)
         print(mano)
     return mano
-
-def puntuacion(mano):
-    total = 0
-    for carta in mano:
-        if carta == 1:
-            total += 11
-        elif carta == 2:
-            total += 2
-        elif carta == 3:
-            total += 3
-        elif carta == 4:
-            total += 4
-        elif carta == 5:
-            total += 5
-        elif carta == 6:
-            total += 6
-        elif carta == 7:
-            total += 7
-        elif carta == 8:
-            total += 8
-        elif carta == 9:
-            total += 9
-        elif carta == 10:
-            total += 10
-        elif carta == 11:
-            total += 10
-        elif carta == 12:
-            total += 10
-        elif carta == 13:
-            total += 10
-        return total
