@@ -95,5 +95,6 @@ def mano():
     for i in range(2):
         random.shuffle(baraja)
         carta = baraja.pop()
+        valor_de_carta(carta)
         mano.append(carta)
     return mano
