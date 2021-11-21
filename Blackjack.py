@@ -1,4 +1,5 @@
 import random
+from random import choice, sample
 
 cartas = {
     chr(0x1f0a1): 11,
@@ -16,7 +17,7 @@ cartas = {
     chr(0x1f0ae): 10,
 }
 
-baraja = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10] * 4
+baraja = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] * 4
 
 print("Cartas: {}".format(" ".join(cartas.keys())))
 print("Puntos: {}".format(list(cartas.values())))
@@ -46,3 +47,4 @@ score_banca = sum(cartas[carta] for carta in main_banca)
 print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0],
                                                           main_banca[1],
                                                           score_banca))
+
