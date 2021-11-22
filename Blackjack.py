@@ -106,6 +106,6 @@ def juego():
     print("Vamos a jugar Blackjack!!!")
     jugador = carta_inicial(baraja)
     banca = carta_inicial(baraja)
-    while opcion != 0:
-        print("La banca tiene " + banca[0])
-        print("Tú has sacado " + jugador[0])
+    while opcion != 3:
+        print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
+        print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
