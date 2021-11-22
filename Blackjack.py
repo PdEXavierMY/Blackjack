@@ -76,7 +76,7 @@ def puntuacion(carta, total):
         total += 10
     return total
 
-def carta_inicial():
+def carta_inicial(baraja):
     mano = []
     total = 0
     for i in range(2):
@@ -88,4 +88,13 @@ def carta_inicial():
         mano.append(carta)
         print(mano)
         print(total)
-    return mano
+    return mano, total
+
+def pedir_carta(mano):
+    total = carta_inicial(baraja).pop(int)
+    carta = baraja.pop()
+    puntos = puntuacion(carta, total)
+    total += puntos
+    carta = simbolo_carta(carta)
+    mano.append(carta)
+    return mano, total
