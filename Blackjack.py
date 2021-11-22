@@ -154,12 +154,16 @@ def juego():
         print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
         print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
         print("La banca ha sacado un blackjack, por lo que pierdes.")
-        jugar_de_nuevo()
+        SioNo = jugar_de_nuevo()
+        if SioNo == False:
+            opcion = 3
     elif jugador[1] == 21:
         print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
         print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
         print("Has sacado un blackjack!!!, se acabó el juego.")
-        jugar_de_nuevo()
+        SioNo = jugar_de_nuevo()
+        if SioNo == False:
+            opcion = 3
     else:
         while opcion != 3:
             print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
@@ -172,6 +176,7 @@ def juego():
                 partida(jugador, banca)
                 SioNo = jugar_de_nuevo()
                 if SioNo == False:
+                    opcion = 3
                     break
             if opcion == 2:
                 while puntuacion(banca[0], banca[1]) < 16:
@@ -179,6 +184,7 @@ def juego():
                 partida(jugador, banca)
                 SioNo = jugar_de_nuevo()
                 if SioNo == False:
+                    opcion = 3
                     break
             if opcion == 3:
                 print("Gracias por jugar")
