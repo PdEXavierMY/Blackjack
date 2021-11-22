@@ -101,6 +101,17 @@ def pedir_carta(mano):
     mano.append(carta)
     return mano, total
 
+def partida(jugador, banca):
+    if puntuacion(jugador) == 21
+    if puntuacion(jugador) > 21
+    if puntuacion(jugador) < puntuacion(banca)
+    if puntuacion(jugador) > puntuacion(banca)
+    if puntuacion(banca) == 21
+    if puntuacion(banca) > 21
+
+def jugar_de_nuevo():
+    
+  
 def juego():
     opcion = 0
     print("Vamos a jugar Blackjack!!!")
