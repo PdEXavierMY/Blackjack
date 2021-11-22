@@ -92,6 +92,7 @@ def carta_inicial(baraja):
 def pedir_carta(mano, total, baraja):
     carta = baraja.pop()
     puntos = puntuacion(carta, total)
+    print(puntos)
     total += puntos
     carta = simbolo_carta(carta)
     mano.append(carta)
@@ -154,16 +155,16 @@ def juego():
             print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
             opcion = pedir_entrada_numero_delimitado("¿Quieres coger carta(1), plantarte(2) o acabar(3)?", 1, 3)
             if opcion == 1:
-                pedir_carta(jugador[0], jugador[1], baraja)
+                jugador = list(pedir_carta(jugador[0], jugador[1], baraja))
                 while puntuacion(banca[0], banca[1]) < 16:
-                    pedir_carta(banca[0], banca[1], baraja)
+                    banca = list(pedir_carta(banca[0], banca[1], baraja))
                 partida(jugador, banca)
                 SioNo = jugar_de_nuevo()
                 if SioNo == False:
                     break
             if opcion == 2:
                 while puntuacion(banca[0], banca[1]) < 16:
-                    pedir_carta(banca[0], banca[1], baraja)
+                    banca = list(pedir_carta(banca[0], banca[1], baraja))
                 partida(jugador, banca)
                 SioNo = jugar_de_nuevo()
                 if SioNo == False:
