@@ -91,7 +91,8 @@ def carta_inicial(baraja):
     return mano, total
 
 def pedir_carta(mano):
-    total = carta_inicial(baraja).pop(int)
+    total = list(carta_inicial(baraja)).pop()
+    print(total)
     carta = baraja.pop()
     puntos = puntuacion(carta, total)
     total += puntos
