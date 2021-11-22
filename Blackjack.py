@@ -103,4 +103,8 @@ def pedir_carta(mano):
 
 def juego():
     opcion = 0
-    
+    print("Vamos a jugar Blackjack!!!")
+    jugador = carta_inicial(baraja)
+    banca = carta_inicial(baraja)
+    while opcion != 0:
+        
