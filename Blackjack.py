@@ -106,22 +106,22 @@ def resultados(jugador, banca):
     print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
 
 def partida(jugador, banca):
-    if puntuacion(jugador) == 21:
+    if puntuacion(jugador[1]) == 21:
         resultados(jugador, banca)
         print("Tienes un blackjack!!!, Has ganado!!!")
-    if puntuacion(jugador) > 21:
+    if puntuacion(jugador[1]) > 21:
         resultados(jugador, banca)
         print("Te has pasado de 21, has perdido.")
-    if puntuacion(jugador) < puntuacion(banca):
+    if puntuacion(jugador[1]) < puntuacion(banca[1]):
         resultados(jugador, banca)
         print("Has perdido, la banca tiene más puntos.")
-    if puntuacion(jugador) > puntuacion(banca):
+    if puntuacion(jugador[1]) > puntuacion(banca[1]):
         resultados(jugador, banca)
         print("Has ganado a la banca!!!")
-    if puntuacion(banca) == 21:
+    if puntuacion(banca[1]) == 21:
         resultados(jugador, banca)
         print("Has perdido :(, la banca tiene un blackjack")
-    if puntuacion(banca) > 21:
+    if puntuacion(banca[1]) > 21:
         resultados(jugador, banca)
         print("La banca se ha pasado, tú ganas.")
 
@@ -151,3 +151,13 @@ def juego():
                 pedir_carta(banca[0])
             partida()
             jugar_de_nuevo()
+        if opcion == 2:
+            while puntuacion(banca[0], banca[1]) < 16:
+                pedir_carta(banca[0])
+            partida()
+            jugar_de_nuevo()
+        if opcion == 3:
+            print("Gracias por jugar")
+            break
+
+juego()
