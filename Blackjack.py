@@ -101,7 +101,6 @@ def pedir_carta(mano, total, baraja):
         puntos = 10
     else:
         puntos = carta
-    print(puntos)
     total += puntos
     carta = simbolo_carta(carta)
     mano.append(carta)
