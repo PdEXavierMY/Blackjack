@@ -9,7 +9,7 @@ def pedir_entrada_numero(invitacion):
         else:
             return entrada
 
-def pedir_entrada_numero_delimitado(invitacion, minimo=MIN, maximo=MAX):
+def pedir_entrada_numero_delimitado(invitacion, minimo, maximo):
     while True:
         invitacion = "{} entre {} y {} incluidos".format(invitacion, minimo, maximo)
         entrada = pedir_entrada_numero(invitacion)
