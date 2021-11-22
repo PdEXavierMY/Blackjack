@@ -114,21 +114,21 @@ def partida(jugador, banca):
     if jugador[1] == 21:
         resultados(jugador, banca)
         print("Tienes un blackjack!!!, Has ganado!!!")
-    if jugador[1] > 21:
-        resultados(jugador, banca)
-        print("Te has pasado de 21, has perdido.")
-    if jugador[1] < banca[1]:
-        resultados(jugador, banca)
-        print("Has perdido, la banca tiene más puntos.")
-    if jugador[1] > banca[1]:
-        resultados(jugador, banca)
-        print("Has ganado a la banca!!!")
-    if banca[1] == 21:
+    elif banca[1] == 21:
         resultados(jugador, banca)
         print("Has perdido :(, la banca tiene un blackjack")
-    if banca[1] > 21:
+    elif jugador[1] > 21:
+        resultados(jugador, banca)
+        print("Te has pasado de 21, has perdido.")
+    elif banca[1] > 21:
         resultados(jugador, banca)
         print("La banca se ha pasado, tú ganas.")
+    elif jugador[1] < banca[1]:
+        resultados(jugador, banca)
+        print("Has perdido, la banca tiene más puntos.")
+    elif jugador[1] > banca[1]:
+        resultados(jugador, banca)
+        print("Has ganado a la banca!!!")
 
 def jugar_de_nuevo():
     otra = pedir_entrada_numero_delimitado("¿Quieres jugar de nuevo?: Sí=1, No=2", 1, 2)
