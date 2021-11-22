@@ -1,3 +1,5 @@
+import sys
+
 def pedir_entrada_numero(invitacion):
     while True:
         print(invitacion, end = ": ")
