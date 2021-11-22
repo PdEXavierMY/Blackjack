@@ -110,13 +110,21 @@ def partida(jugador, banca):
     if puntuacion(banca) > 21
 
 def jugar_de_nuevo():
-    
+    otra = pedir_entrada_numero_delimitado("¿Quieres jugar de nuevo?: Sí=1, No=2", 1, 2)
+    if otra == 1:
+        jugador = []
+        banca = []
+        baraja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] * 4
+        juego()
+    else:
+        print("Gracias por jugar")
+
   
 def juego():
     opcion = 0
     print("Vamos a jugar Blackjack!!!")
-    jugador = carta_inicial(baraja)
-    banca = carta_inicial(baraja)
+    jugador = list(carta_inicial(baraja))
+    banca = list(carta_inicial(baraja))
     while opcion != 3:
         print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
         print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
