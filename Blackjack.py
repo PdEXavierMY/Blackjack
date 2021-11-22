@@ -117,6 +117,9 @@ def partida(jugador, banca):
     elif banca[1] == 21:
         resultados(jugador, banca)
         print("Has perdido :(, la banca tiene un blackjack")
+    elif jugador[1] > 21 and banca[1] > 21:
+        resultados(jugador, banca)
+        print("Te has pasado de 21, termina el juego sin ganadores ni perdedores.")
     elif jugador[1] > 21:
         resultados(jugador, banca)
         print("Te has pasado de 21, has perdido.")
