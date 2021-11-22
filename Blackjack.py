@@ -87,8 +87,6 @@ def carta_inicial(baraja):
         total += puntos
         carta = simbolo_carta(carta)
         mano.append(carta)
-        print(mano)
-        print(total)
     return mano, total
 
 def pedir_carta(mano):
@@ -106,22 +104,22 @@ def resultados(jugador, banca):
     print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
 
 def partida(jugador, banca):
-    if puntuacion(jugador[1]) == 21:
+    if jugador[1] == 21:
         resultados(jugador, banca)
         print("Tienes un blackjack!!!, Has ganado!!!")
-    if puntuacion(jugador[1]) > 21:
+    if jugador[1] > 21:
         resultados(jugador, banca)
         print("Te has pasado de 21, has perdido.")
-    if puntuacion(jugador[1]) < puntuacion(banca[1]):
+    if jugador[1] < banca[1]:
         resultados(jugador, banca)
         print("Has perdido, la banca tiene más puntos.")
-    if puntuacion(jugador[1]) > puntuacion(banca[1]):
+    if jugador[1] > banca[1]:
         resultados(jugador, banca)
         print("Has ganado a la banca!!!")
-    if puntuacion(banca[1]) == 21:
+    if banca[1] == 21:
         resultados(jugador, banca)
         print("Has perdido :(, la banca tiene un blackjack")
-    if puntuacion(banca[1]) > 21:
+    if banca[1] > 21:
         resultados(jugador, banca)
         print("La banca se ha pasado, tú ganas.")
 
@@ -141,23 +139,30 @@ def juego():
     print("Vamos a jugar Blackjack!!!")
     jugador = list(carta_inicial(baraja))
     banca = list(carta_inicial(baraja))
-    while opcion != 3:
-        print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
-        print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
-        opcion = pedir_entrada_numero_delimitado("¿Quieres coger carta(1), plantarte(2) o acabar(3)?", 1, 3)
-        if opcion == 1:
-            pedir_carta(jugador[0])
-            while puntuacion(banca[0], banca[1]) < 16:
-                pedir_carta(banca[0])
-            partida()
-            jugar_de_nuevo()
-        if opcion == 2:
-            while puntuacion(banca[0], banca[1]) < 16:
-                pedir_carta(banca[0])
-            partida()
-            jugar_de_nuevo()
-        if opcion == 3:
-            print("Gracias por jugar")
-            break
+    if banca[1] == 21:
+        print("La banca ha sacado un blackjack, por lo que pierdes.")
+        jugar_de_nuevo()
+    elif jugador[1] == 21:
+        print("Has sacado un blackjack!!!, se acabó el juego.")
+        jugar_de_nuevo()
+    else:
+        while opcion != 3:
+            print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
+            print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
+            opcion = pedir_entrada_numero_delimitado("¿Quieres coger carta(1), plantarte(2) o acabar(3)?", 1, 3)
+            if opcion == 1:
+                pedir_carta(jugador[0])
+                while puntuacion(banca[0], banca[1]) < 16:
+                    pedir_carta(banca[0])
+                partida(jugador, banca)
+                jugar_de_nuevo()
+            if opcion == 2:
+                while puntuacion(banca[0], banca[1]) < 16:
+                    pedir_carta(banca[0])
+                partida(jugador, banca)
+                jugar_de_nuevo()
+            if opcion == 3:
+                print("Gracias por jugar")
+                break
 
 juego()
