@@ -1,4 +1,5 @@
 import random
+from pedir_numero import (pedir_entrada_numero, pedir_entrada_numero_delimitado)
 
 cartas = {
     chr(0x1f0a1): 11,
@@ -99,3 +100,7 @@ def pedir_carta(mano):
     carta = simbolo_carta(carta)
     mano.append(carta)
     return mano, total
+
+def juego():
+    opcion = 0
+    
