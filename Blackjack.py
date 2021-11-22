@@ -1,22 +1,6 @@
 import random
 from pedir_numero import (pedir_entrada_numero, pedir_entrada_numero_delimitado)
 
-cartas = {
-    chr(0x1f0a1): 1,
-    chr(0x1f0a2): 2,
-    chr(0x1f0a3): 3,
-    chr(0x1f0a4): 4,
-    chr(0x1f0a5): 5,
-    chr(0x1f0a6): 6,
-    chr(0x1f0a7): 7,
-    chr(0x1f0a8): 8,
-    chr(0x1f0a9): 9,
-    chr(0x1f0aa): 10,
-    chr(0x1f0ab): 11,
-    chr(0x1f0ad): 12,
-    chr(0x1f0ae): 13,
-}
-
 baraja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] * 4
 
 def simbolo_carta(carta):
