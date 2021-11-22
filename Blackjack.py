@@ -2,7 +2,7 @@ import random
 from pedir_numero import (pedir_entrada_numero, pedir_entrada_numero_delimitado)
 
 cartas = {
-    chr(0x1f0a1): 11,
+    chr(0x1f0a1): 1,
     chr(0x1f0a2): 2,
     chr(0x1f0a3): 3,
     chr(0x1f0a4): 4,
@@ -12,9 +12,9 @@ cartas = {
     chr(0x1f0a8): 8,
     chr(0x1f0a9): 9,
     chr(0x1f0aa): 10,
-    chr(0x1f0ab): 10,
-    chr(0x1f0ad): 10,
-    chr(0x1f0ae): 10,
+    chr(0x1f0ab): 11,
+    chr(0x1f0ad): 12,
+    chr(0x1f0ae): 13,
 }
 
 baraja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] * 4
@@ -89,9 +89,7 @@ def carta_inicial(baraja):
         mano.append(carta)
     return mano, total
 
-def pedir_carta(mano):
-    total = list(carta_inicial(baraja)).pop()
-    print(total)
+def pedir_carta(mano, total):
     carta = baraja.pop()
     puntos = puntuacion(carta, total)
     total += puntos
@@ -140,9 +138,13 @@ def juego():
     jugador = list(carta_inicial(baraja))
     banca = list(carta_inicial(baraja))
     if banca[1] == 21:
+        print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
+        print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
         print("La banca ha sacado un blackjack, por lo que pierdes.")
         jugar_de_nuevo()
     elif jugador[1] == 21:
+        print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
+        print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
         print("Has sacado un blackjack!!!, se acabó el juego.")
         jugar_de_nuevo()
     else:
@@ -151,14 +153,14 @@ def juego():
             print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
             opcion = pedir_entrada_numero_delimitado("¿Quieres coger carta(1), plantarte(2) o acabar(3)?", 1, 3)
             if opcion == 1:
-                pedir_carta(jugador[0])
+                pedir_carta(jugador[0], jugador[1])
                 while puntuacion(banca[0], banca[1]) < 16:
-                    pedir_carta(banca[0])
+                    pedir_carta(banca[0], banca[1])
                 partida(jugador, banca)
                 jugar_de_nuevo()
             if opcion == 2:
                 while puntuacion(banca[0], banca[1]) < 16:
-                    pedir_carta(banca[0])
+                    pedir_carta(banca[0], banca[1])
                 partida(jugador, banca)
                 jugar_de_nuevo()
             if opcion == 3:
