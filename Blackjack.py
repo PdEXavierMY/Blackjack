@@ -91,7 +91,16 @@ def carta_inicial(baraja):
 
 def pedir_carta(mano, total, baraja):
     carta = baraja.pop()
-    puntos = puntuacion(carta, total)
+    if carta == 1:
+        puntos = 11
+    elif carta == 11:
+        puntos = 10
+    elif carta == 12:
+        puntos = 10
+    elif carta == 13:
+        puntos = 10
+    else:
+        puntos = carta
     print(puntos)
     total += puntos
     carta = simbolo_carta(carta)
