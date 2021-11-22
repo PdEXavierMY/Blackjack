@@ -5,13 +5,12 @@ def pedir_entrada_numero(invitacion):
         try:
             entrada = int(entrada)
         except:
-            print("Solo los caracteres [0-9] están autorizados.", file = sys.stderr)
+            print("Solo los caracteres [0-3] están autorizados.", file = sys.stderr)
         else:
             return entrada
 
 def pedir_entrada_numero_delimitado(invitacion, minimo, maximo):
     while True:
-        invitacion = "{} entre {} y {} incluidos".format(invitacion, minimo, maximo)
         entrada = pedir_entrada_numero(invitacion)
         if minimo <= entrada <= maximo:
             return entrada
