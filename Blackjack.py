@@ -101,12 +101,22 @@ def pedir_carta(mano):
     mano.append(carta)
     return mano, total
 
+def resultados(jugador, banca):
+    print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
+    print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
+
 def partida(jugador, banca):
-    if puntuacion(jugador) == 21
+    if puntuacion(jugador) == 21:
+        resultados(jugador, banca)
+        print("Tienes un blackjack!!!, Has ganado!!!")
+        jugar_de_nuevo()
     if puntuacion(jugador) > 21
     if puntuacion(jugador) < puntuacion(banca)
     if puntuacion(jugador) > puntuacion(banca)
-    if puntuacion(banca) == 21
+    if puntuacion(banca) == 21:
+        resultados(jugador, banca)
+        print("Has perdido :(, la banca tiene un blackjack")
+        jugar_de_nuevo
     if puntuacion(banca) > 21
 
 def jugar_de_nuevo():
@@ -117,7 +127,7 @@ def jugar_de_nuevo():
         baraja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] * 4
         juego()
     else:
-        print("Gracias por jugar")
+        print("Gracias por jugar.")
 
   
 def juego():
