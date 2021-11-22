@@ -109,3 +109,5 @@ def juego():
     while opcion != 3:
         print("La banca tiene " + str(banca[0]) + " que son " + str(banca[1]) + " puntos.")
         print("Tú has sacado " + str(jugador[0]) + " que son " + str(jugador[1]) + " puntos.")
+        opcion = pedir_entrada_numero_delimitado("¿Quieres coger carta(1), plantarte(2) o acabar(3)?", 1, 3)
+        if opcion = 
