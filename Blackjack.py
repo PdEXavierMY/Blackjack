@@ -1,5 +1,5 @@
 import random
-from pedir_numero import (pedir_entrada_numero, pedir_entrada_numero_delimitado)
+from pedir_numero import pedir_entrada_numero_delimitado
 
 cartas = {
     chr(0x1f0a1): 1,
@@ -16,7 +16,7 @@ cartas = {
     chr(0x1f0ad): 12,
     chr(0x1f0ae): 13,
 }
-baraja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] * 4
+baraja = (list(cartas.values())) * 4
 
 def simbolo_carta(carta):
     if carta == 1:
