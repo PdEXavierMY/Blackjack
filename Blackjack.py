@@ -175,7 +175,6 @@ def juego():
                 partida(jugador, banca)
                 SioNo = jugar_de_nuevo()
                 if SioNo == False:
-                    opcion = 3
                     break
             if opcion == 2:
                 while puntuacion(banca[0], banca[1]) < 16:
@@ -183,7 +182,6 @@ def juego():
                 partida(jugador, banca)
                 SioNo = jugar_de_nuevo()
                 if SioNo == False:
-                    opcion = 3
                     break
             if opcion == 3:
                 print("Gracias por jugar.")
